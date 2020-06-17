@@ -2,6 +2,7 @@ import { Component, Input, OnInit, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import {DEFAULT_TEMPLATE, DEFAULT_STYLES} from './template';
 import * as moment from 'moment/moment';
+moment.locale('ja');
 
 @Component({
     selector: 'multiple-date-picker',
@@ -37,7 +38,6 @@ export class MultipleDatePickerComponent implements OnInit, ControlValueAccessor
     @Input() disableDaysAfter: any;
     @Input() changeYearPast: string;
     @Input() changeYearFuture: string;
-    @Input() locale: string;
     arrow: number = 0;
     monthAdjustment: any;
     @Input() month = moment().startOf('day');  // today's day at start of day midnight or passed in value
@@ -60,7 +60,6 @@ export class MultipleDatePickerComponent implements OnInit, ControlValueAccessor
     }
 
     ngOnInit(): void {
-        moment.locale(this.locale || 'en-US') //dynamic locale
         /**
          * check to see if this.month is undefined... if it is set to todays date info
          * protection for calendar month adjustments -- otherwise will break upon loading
@@ -323,7 +322,7 @@ export class MultipleDatePickerComponent implements OnInit, ControlValueAccessor
         let year = this.month.year().toString();
         this.yearsForSelect = this.getYearsForSelect();
         this.monthToDisplay = this.getMonthYearToDisplay();
-        this.yearToDisplay = this.month.format('YYYY');
+        this.yearToDisplay = this.month.format('YYYY年');
         let previousDay = moment(this.month).date(0).day(this.sundayFirstDay ? 0 : 1).subtract(1, 'day');
 
         if (moment(this.month).date(0).diff(previousDay, 'day') > 6) {

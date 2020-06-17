@@ -4,6 +4,7 @@ var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var template_1 = require("./template");
 var moment = require("moment/moment");
+moment.locale('ja');
 var MultipleDatePickerComponent = (function () {
     function MultipleDatePickerComponent() {
         this.cssDaysOfSurroundingMonths = this.cssDaysOfSurroundingMonths || 'picker-empty';
@@ -20,7 +21,6 @@ var MultipleDatePickerComponent = (function () {
         this.propagateChange = function (_) { };
     }
     MultipleDatePickerComponent.prototype.ngOnInit = function () {
-        moment.locale(this.locale || 'en-US'); //dynamic locale
         /**
          * check to see if this.month is undefined... if it is set to todays date info
          * protection for calendar month adjustments -- otherwise will break upon loading
@@ -277,7 +277,7 @@ var MultipleDatePickerComponent = (function () {
         var year = this.month.year().toString();
         this.yearsForSelect = this.getYearsForSelect();
         this.monthToDisplay = this.getMonthYearToDisplay();
-        this.yearToDisplay = this.month.format('YYYY');
+        this.yearToDisplay = this.month.format('YYYY年');
         var previousDay = moment(this.month).date(0).day(this.sundayFirstDay ? 0 : 1).subtract(1, 'day');
         if (moment(this.month).date(0).diff(previousDay, 'day') > 6) {
             previousDay = previousDay.add(1, 'week');
@@ -365,7 +365,6 @@ var MultipleDatePickerComponent = (function () {
         'disableDaysAfter': [{ type: core_1.Input },],
         'changeYearPast': [{ type: core_1.Input },],
         'changeYearFuture': [{ type: core_1.Input },],
-        'locale': [{ type: core_1.Input },],
         'month': [{ type: core_1.Input },],
         'projectScope': [{ type: core_1.Input },],
         'sundayFirstDay': [{ type: core_1.Input },],

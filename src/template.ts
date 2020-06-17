@@ -7,8 +7,8 @@ export const DEFAULT_TEMPLATE = `
             <p *ngSwitchCase="2"><i class="fa fa-angle-left" aria-hidden="true"></i></p>
         </div>
         <div class="text-center picker-month">
-            {{monthToDisplay}}
             <span *ngIf="yearsForSelect.length < 2">{{yearToDisplay}}</span>
+            {{monthToDisplay}}
         </div>
         <div class="text-center picker-navigate picker-navigate-right-arrow" [ngClass]="{'disabled':disableNextButton}" (click)="changeMonth($event, disableNextButton, 1)">
             <p *ngSwitchDefault>&gt;</p>
