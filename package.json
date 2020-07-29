@@ -35,16 +35,16 @@
   "author": "Christian Matthias Holes <xtianus@live.com>",
   "license": "MIT",
   "devDependencies": {
-    "@angular/animations": "4.3.2",
-    "@angular/common": "4.3.2",
-    "@angular/compiler": "4.3.2",
-    "@angular/compiler-cli": "4.3.2",
-    "@angular/core": "4.3.2",
-    "@angular/forms": "4.3.2",
-    "@angular/platform-browser": "4.3.2",
-    "@angular/platform-browser-dynamic": "4.3.2",
-    "@angular/platform-server": "4.3.2",
-    "@angular/router": "4.3.2",
+    "@angular/animations": "7.2.15",
+    "@angular/common": "7.2.15",
+    "@angular/compiler": "7.2.15",
+    "@angular/compiler-cli": "7.2.15",
+    "@angular/core": "7.2.15",
+    "@angular/forms": "7.2.15",
+    "@angular/platform-browser": "7.2.15",
+    "@angular/platform-browser-dynamic": "7.2.15",
+    "@angular/platform-server": "7.2.15",
+    "@angular/router": "7.2.15",
     "@ngtools/webpack": "1.5.5",
     "@types/es6-shim": "^0.31.34",
     "@types/node": "8.0.17",
@@ -69,18 +69,20 @@
     "phantomjs-prebuilt": "2.1.14",
     "raw-loader": "0.5.1",
     "reflect-metadata": "0.1.10",
-    "rxjs": "^5.4.2",
+    "rxjs": "^6.6.0",
     "sass-loader": "6.0.6",
     "style-loader": "0.18.2",
     "ts-loader": "2.3.2",
-    "typescript": "2.4.2",
+    "typescript": "3.2.4",
     "webpack": "3.4.1",
-    "zone.js": "0.8.16"
+    "zone.js": "0.8.29"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "moment": "2.18.1"
+    "@angular-devkit/schematics": "^10.0.4",
+    "moment": "2.18.1",
+    "rxjs-compat": "^6.0.0-rc.0"
   }
 }
